@@ -1,0 +1,5 @@
+psql --command "UPDATE pg_database SET datallowconn = 'false' WHERE datname = 'TrafficOrganization'" "dbname=postgres host=localhost port=5433 user=postgres password=1a2s3d4f"
+psql --command "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'TrafficOrganization'" "dbname=postgres host=localhost port=5433 user=postgres password=1a2s3d4f"
+psql --command "DROP DATABASE TrafficOrganization" "dbname=postgres host=localhost port=5433 user=postgres password=1a2s3d4f"
+psql --command "CREATE DATABASE TrafficOrganization" "dbname=postgres host=localhost port=5433 user=postgres password=1a2s3d4f"
+psql -f %1 "dbname=TrafficOrganization host=localhost port=5433 user=postgres password=1a2s3d4f"
